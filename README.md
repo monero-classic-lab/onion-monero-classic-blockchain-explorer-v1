@@ -95,12 +95,16 @@ Note: `devel` branch of the explorer follows `master` branch of the monero.
 ## Compilation on Ubuntu 16.04/18.04
 
 
-#### Monero download and compilation
+#### Monero-Classic checkpoint download and compilation
 
 To download and compile recent Monero follow instructions
 in the following link:
 
-https://github.com/moneroexamples/monero-compilation/blob/master/README.md
+https://github.com/monero-classic-lab/monero-classic-v1-add-checkpoint
+
+```bash
+ USE_SINGLE_BUILDDIR=1 make
+```
 
 ##### Compile and run the explorer
 
@@ -124,7 +128,8 @@ cd onion-monero-blockchain-explorer
 mkdir build && cd build
 
 # create the makefile
-cmake ..
+# you should modified to your owner monero-classic-v1-add-checkpoint path
+cmake -DMONERO_DIR=/path/to/monero-classic-v1-add-checkpoint ..
 
 # compile
 make
